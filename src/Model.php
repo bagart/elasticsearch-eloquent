@@ -54,7 +54,7 @@ abstract class Model implements Arrayable, Jsonable, Stringable, JsonSerializabl
      */
     public function toArray()
     {
-        return array_where(get_object_vars($this), function ($key) {
+        return array_where(get_object_vars($this), function ($value, $key) {
             return !starts_with($key, '_');
         });
     }
